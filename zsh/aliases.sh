@@ -12,12 +12,10 @@ alias zsconfig='code ~/.zshrc'
 function copyfile() {
     if [ -z "$1" ]; then
         echo "No file specified"
+    elif [ ! -f "$1" ]; then
+        echo "No such file"
     else
-        if [ -f "$1" ]; then
-            cat "$1" | clip.exe
-        else
-            echo "File not found"
-        fi
+        cat $1 | clip.exe
     fi
 }
 # <<< functions <<<" >> ~/.zshrc
