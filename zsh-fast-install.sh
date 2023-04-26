@@ -2,7 +2,7 @@
 mkdir ~/packages
 
 # create a backup of the .zshrc file
-mv ~/.zshrc ~/packages/.zshrc.bkp
+mv ~/.zshrc ~/packages/zsh.bkp
 touch ~/.zshrc
 
 # >>>>>>>>>>>>>>> my zsh configuration >>>>>>>>>>>>>>>>
@@ -14,21 +14,21 @@ zsh ./zsh/plugins.sh
 zsh ./zsh/aliases.sh
 zsh ./zsh/dracula.sh
 
-# git configuration
-zsh ./git/git.sh
-
 # ask for docker credentials and github global name and email
-read -s "DockerUsername?Enter your docker hub username: "
+read "DockerUsername?Enter your docker hub username: "
 echo ""
 read -s "DockerPassword?Enter your docker hub password: "
 echo "" 
-read -s "GithubName?Enter your github global name: "
+read "GithubName?Enter your github global name: "
 echo ""
-read -s "GithubEmail?Enter your github global email: "
+read "GithubEmail?Enter your github global email: "
+
+# git configuration
+zsh ./git/git.sh $GithubName $GithubEmail 
 
 # install apps
 zsh ./apps/docker.sh $DockerUsername $DockerPassword
-zsh ./apps/go.sh $GithubName $GithubEmail
+zsh ./apps/go.sh
 zsh ./apps/miniconda.sh
 zsh ./apps/nodejs.sh
 
