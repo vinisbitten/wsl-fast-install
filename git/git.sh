@@ -10,7 +10,13 @@ git config --global credential.helper 'cache --timeout=36000'
 # set permissions
 sudo chmod 600 git/private-keys/*
 sudo chmod 644 git/public-keys/*
-sudo chmod 600 git/config
+sudo chmod 644 git/config
+
+# check if .ssh folder exist
+if [ ! -d "$HOME/.ssh" ]; then
+    mkdir "$HOME/.ssh"
+    chmod 700 "$HOME/.ssh"
+fi
 
 # create temp folder
 mkdir git/temp
