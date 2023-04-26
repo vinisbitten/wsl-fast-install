@@ -15,4 +15,6 @@ source ~/.zshrc
 nvm install node --lts
 nvm use node --lts
 nvm alias default node
+
+# install gitmoji
 npm i -g gitmoji-cli
