@@ -1,4 +1,4 @@
-# aliases and functions
+# aliases
 echo "
 # >>> aliases >>>
 alias copypath='pwd | clip.exe'
@@ -6,8 +6,10 @@ alias distro='cat /etc/*-release'
 alias myip='curl http://ipecho.net/plain; echo'
 alias reload='source ~/.zshrc; clear'
 alias zsconfig='code ~/.zshrc'
-# <<< aliases <<<
+# <<< aliases <<<" >> ~/.zshrc
 
+# functions
+echo '
 # >>> functions >>>
 function copyfile() {
     if [ -z "$1" ]; then
@@ -18,4 +20,4 @@ function copyfile() {
         cat $1 | clip.exe
     fi
 }
-# <<< functions <<<" >> ~/.zshrc
+# <<< functions <<<' >> ~/.zshrc
