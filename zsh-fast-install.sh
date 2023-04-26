@@ -15,19 +15,14 @@ zsh ./zsh/aliases.sh
 zsh ./zsh/dracula.sh
 
 # ask for docker credentials and github global name and email
-read "DockerUsername?Enter your docker hub username: "
-echo ""
-read -s "DockerPassword?Enter your docker hub password: "
-echo "" 
 read "GithubName?Enter your github global name: "
-echo ""
 read "GithubEmail?Enter your github global email: "
 
 # git configuration
 zsh ./git/git.sh $GithubName $GithubEmail 
 
 # install apps
-zsh ./apps/docker.sh $DockerUsername $DockerPassword
+zsh ./apps/docker.sh
 zsh ./apps/go.sh
 zsh ./apps/miniconda.sh
 zsh ./apps/nodejs.sh

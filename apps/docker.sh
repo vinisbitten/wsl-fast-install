@@ -22,11 +22,3 @@ sudo usermod -aG docker $(whoami)
 
 # install docker-compose
 sudo apt install docker-compose -y
-
-# if credentials are provided
-if [ $# -eq 2 ]; then
-    # store credentials in .dockerconfig file using base64 encoding
-    echo "auths:
-      https://index.docker.io/v1/:
-        auth: $(echo -n $1:$2 | base64)" > ~/.dockerconfig
-fi
