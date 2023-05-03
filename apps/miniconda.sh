@@ -14,5 +14,8 @@ rm Miniconda3-latest-Linux-x86_64.sh
 # reload zshrc
 source ~/.zshrc
 
+# configure conda to not activate base environment on startup
+conda config --set auto_activate_base false
+
 # install conda packages
 conda install jupyter -y
